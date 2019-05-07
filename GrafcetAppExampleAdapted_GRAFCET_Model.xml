@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GlobalGRAFCET xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="platform:/plugin/org.eclipse.gmf.grafcet/model/grafcet.ecore">
+  <arcs source="//@transitions.4" target="//@steps.3"/>
+  <arcs source="//@transitions.0" target="//@steps.1"/>
+  <arcs source="//@transitions.1" target="//@steps.2"/>
+  <arcs source="//@transitions.2" target="//@steps.2"/>
+  <arcs source="//@transitions.3" target="//@steps.0"/>
+  <arcs source="//@steps.3" target="//@transitions.2"/>
+  <arcs source="//@steps.1" target="//@transitions.1"/>
+  <arcs source="//@steps.0" target="//@transitions.0"/>
+  <arcs source="//@steps.0" target="//@transitions.4"/>
+  <arcs source="//@steps.2" target="//@transitions.3"/>
+  <ActionLinks ALSource="//@steps.1" ALTarget="//@interpretations.2"/>
+  <ActionLinks ALSource="//@steps.3" ALTarget="//@interpretations.1"/>
+  <ActionLinks ALSource="//@steps.2" ALTarget="//@interpretations.0"/>
+  <interpretations xsi:type="ContinuousAction" ID="3" Value="DO_1"/>
+  <interpretations xsi:type="ContinuousAction" ID="2" Value="DO_31"/>
+  <interpretations xsi:type="StoredAction" ID="1" Value="AO_1 := (AO_1+1)" saType="deactivation"/>
+  <transitions Term="DI_3" ID="3"/>
+  <transitions Term="DI_1 AND DI_2" ID="1"/>
+  <transitions Term="DI_6" ID="6"/>
+  <transitions Term="DI_5" ID="5"/>
+  <transitions Term="DI_4" ID="4"/>
+  <steps xsi:type="Step" initial="true" ID="1"/>
+  <steps xsi:type="Step" ID="5"/>
+  <steps xsi:type="Step" ID="4"/>
+  <steps xsi:type="Step" ID="3"/>
+</GlobalGRAFCET>

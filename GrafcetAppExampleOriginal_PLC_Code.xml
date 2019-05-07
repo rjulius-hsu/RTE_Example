@@ -1,0 +1,527 @@
+<?xml version="1.0" encoding="utf-8"?>
+<project xmlns="http://www.plcopen.org/xml/tc6_0200">
+  <fileHeader companyName="" productName="CODESYS" productVersion="CODESYS V3.5 SP7 Patch 2" creationDateTime="2018-07-08T13:58:46.9898301" />
+  <contentHeader name="PLCOpen_Leer.project" modificationDateTime="2018-07-08T13:57:47.963454">
+    <coordinateInfo>
+      <fbd>
+        <scaling x="1" y="1" />
+      </fbd>
+      <ld>
+        <scaling x="1" y="1" />
+      </ld>
+      <sfc>
+        <scaling x="1" y="1" />
+      </sfc>
+    </coordinateInfo>
+    <addData>
+      <data name="http://www.3s-software.com/plcopenxml/projectinformation" handleUnknown="implementation">
+        <ProjectInformation />
+      </data>
+    </addData>
+  </contentHeader>
+  <types>
+    <dataTypes />
+    <pous>
+
+
+		  <pou name="Grafcet_Control" pouType="functionBlock">
+		    <interface>
+		  	  <inputVars>
+		  	  	<variable name="Enable">
+		  	  	  <type>
+		  	  		  <BOOL />
+		  	  	  </type>
+		  	  	  <initialValue>
+		  	  		<simpleValue value="false" />
+		  	  	  </initialValue>
+		  	  	</variable>
+		  	  	
+		  	  	<variable name="Init">
+		  	  	  <type>
+		  	  		  <BOOL />
+		  	  	  </type>
+		  	  	  <initialValue>
+		  	  		<simpleValue value="false" />
+		  	  	  </initialValue>
+		  	  	</variable>
+		  	  	
+		  	  	<variable name="End">
+		  	  	  <type>
+		  	  		  <BOOL />
+		  	  	  </type>
+		  	  	  <initialValue>
+		  	  		<simpleValue value="false" />
+		  	  	  </initialValue>
+		  	  	</variable>
+		  	  	
+		  	    </inputVars>
+		  	  <localVars>
+		  	  	<variable name="StableState">
+		  	  	  <type>
+		  	  		  <BOOL />
+		  	  	  </type>
+		  	  	  <initialValue>
+		  	  		<simpleValue value="false" />
+		  	  	  </initialValue>
+		  	  	</variable>
+		  	  	
+		  	  	<variable name="TranLoops">
+		  	  	  <type>
+		  	  		  <INT />
+		  	  	  </type>
+		  	  	  <initialValue>
+		  	  		<simpleValue value="0" />
+		  	  	  </initialValue>
+		  	  	</variable>
+		  	  	
+		  	  	<variable name="NumTran">
+		  	  	  <type>
+		  	  		  <INT />
+		  	  	  </type>
+		  	  	  <initialValue>
+		  	  		<simpleValue value="6" />
+		  	  	  </initialValue>
+		  	  	</variable>
+		  	  	
+		  	  	<variable name="T_1">
+		  	  	  <type>
+		  	  		  <BOOL />
+		  	  	  </type>
+		  	  	  <initialValue>
+		  	  		<simpleValue value="false" />
+		  	  	  </initialValue>
+		  	  	</variable>
+		  	  	
+		  	  	<variable name="T_2">
+		  	  	  <type>
+		  	  		  <BOOL />
+		  	  	  </type>
+		  	  	  <initialValue>
+		  	  		<simpleValue value="false" />
+		  	  	  </initialValue>
+		  	  	</variable>
+		  	  	
+		  	  	<variable name="T_3">
+		  	  	  <type>
+		  	  		  <BOOL />
+		  	  	  </type>
+		  	  	  <initialValue>
+		  	  		<simpleValue value="false" />
+		  	  	  </initialValue>
+		  	  	</variable>
+		  	  	
+		  	  	<variable name="T_5">
+		  	  	  <type>
+		  	  		  <BOOL />
+		  	  	  </type>
+		  	  	  <initialValue>
+		  	  		<simpleValue value="false" />
+		  	  	  </initialValue>
+		  	  	</variable>
+		  	  	
+		  	  	<variable name="T_6">
+		  	  	  <type>
+		  	  		  <BOOL />
+		  	  	  </type>
+		  	  	  <initialValue>
+		  	  		<simpleValue value="false" />
+		  	  	  </initialValue>
+		  	  	</variable>
+		  	  	
+		  	  	<variable name="T_4">
+		  	  	  <type>
+		  	  		  <BOOL />
+		  	  	  </type>
+		  	  	  <initialValue>
+		  	  		<simpleValue value="false" />
+		  	  	  </initialValue>
+		  	  	</variable>
+		  	  	
+		  	    </localVars>
+		  	
+		    </interface>
+		    <body>
+		  	<ST>
+		  	  <xhtml xmlns="http://www.w3.org/1999/xhtml">
+		  		(****** Init_Grafcet ******)
+		  		IF Init THEN
+		  			Step_1 := true;
+		  			actStep_1 := false;
+		  			deactStep_1 := false;
+		  			Step_2 := false;
+		  			actStep_2 := false;
+		  			deactStep_2 := false;
+		  			Step_3 := false;
+		  			actStep_3 := false;
+		  			deactStep_3 := false;
+		  			Step_5 := false;
+		  			actStep_5 := false;
+		  			deactStep_5 := false;
+		  			Step_4 := false;
+		  			actStep_4 := false;
+		  			deactStep_4 := false;
+		  		END_IF
+		  		(****** End_Grafcet ******)
+		  		IF End THEN
+		  			Step_1 := false;
+		  			actStep_1 := false;
+		  			deactStep_1 := false;
+		  			Step_2 := false;
+		  			actStep_2 := false;
+		  			deactStep_2 := false;
+		  			Step_3 := false;
+		  			actStep_3 := false;
+		  			deactStep_3 := false;
+		  			Step_5 := false;
+		  			actStep_5 := false;
+		  			deactStep_5 := false;
+		  			Step_4 := false;
+		  			actStep_4 := false;
+		  			deactStep_4 := false;
+		  		END_IF
+		  		(****** Program ******)
+		  		IF (Enable) THEN
+		  			TranLoops := (0);
+		  			StableState := true;
+		  			WHILE ((StableState)AND(TranLoops&lt;NumTran)) DO
+		  			StableState := false;
+		  			TranLoops := (TranLoops+1);
+		  			(****** Transition_Part ******)
+		  			IF ((INIT=FALSE)AND(END=FALSE)) THEN
+		  				(****** Enable_Transitions ******)
+		  				T_1 := (Step_1);
+		  				T_2 := (Step_2);
+		  				T_3 := (Step_3);
+		  				T_5 := (Step_4);
+		  				T_6 := (Step_5);
+		  				T_4 := (Step_1);
+		  				(****** T_1 ******)
+		  				IF ((DI_1)AND(T_1)) THEN
+		  					StableState := true;
+		  					(****** deactivate_presteps ******)
+		  					Step_1 := false;
+		  					actStep_1 := false;
+		  					deactStep_1 := true;
+		  					(****** activate_poststeps ******)
+		  					Step_2 := true;
+		  					actStep_2 := true;
+		  					deactStep_2 := false;
+		  				END_IF
+		  				(****** T_2 ******)
+		  				IF ((DI_2)AND(T_2)) THEN
+		  					StableState := true;
+		  					(****** deactivate_presteps ******)
+		  					Step_2 := false;
+		  					actStep_2 := false;
+		  					deactStep_2 := true;
+		  					(****** activate_poststeps ******)
+		  					Step_3 := true;
+		  					actStep_3 := true;
+		  					deactStep_3 := false;
+		  				END_IF
+		  				(****** T_3 ******)
+		  				IF ((DI_3)AND(T_3)) THEN
+		  					StableState := true;
+		  					(****** deactivate_presteps ******)
+		  					Step_3 := false;
+		  					actStep_3 := false;
+		  					deactStep_3 := true;
+		  					(****** activate_poststeps ******)
+		  					Step_5 := true;
+		  					actStep_5 := true;
+		  					deactStep_5 := false;
+		  				END_IF
+		  				(****** T_5 ******)
+		  				IF ((DI_5)AND(T_5)) THEN
+		  					StableState := true;
+		  					(****** deactivate_presteps ******)
+		  					Step_4 := false;
+		  					actStep_4 := false;
+		  					deactStep_4 := true;
+		  					(****** activate_poststeps ******)
+		  					Step_5 := true;
+		  					actStep_5 := true;
+		  					deactStep_5 := false;
+		  				END_IF
+		  				(****** T_6 ******)
+		  				IF ((DI_6)AND(T_6)) THEN
+		  					StableState := true;
+		  					(****** deactivate_presteps ******)
+		  					Step_5 := false;
+		  					actStep_5 := false;
+		  					deactStep_5 := true;
+		  					(****** activate_poststeps ******)
+		  					Step_1 := true;
+		  					actStep_1 := true;
+		  					deactStep_1 := false;
+		  				END_IF
+		  				(****** T_4 ******)
+		  				IF ((DI_4)AND(T_4)) THEN
+		  					StableState := true;
+		  					(****** deactivate_presteps ******)
+		  					Step_1 := false;
+		  					actStep_1 := false;
+		  					deactStep_1 := true;
+		  					(****** activate_poststeps ******)
+		  					Step_4 := true;
+		  					actStep_4 := true;
+		  					deactStep_4 := false;
+		  				END_IF
+		  			END_IF
+		  			(****** Step_Part ******)
+		  			(****** Step_1 ******)
+		  			IF (actStep_1)OR(Step_1)OR(deactStep_1) THEN
+		  				IF actStep_1 THEN
+		  					actStep_1 := false;
+		  				END_IF
+		  				IF Step_1 THEN
+		  					;
+		  				END_IF
+		  				IF deactStep_1 THEN
+		  					deactStep_1 := false;
+		  				END_IF
+		  			END_IF
+		  			(****** Step_2 ******)
+		  			IF (actStep_2)OR(Step_2)OR(deactStep_2) THEN
+		  				IF actStep_2 THEN
+		  					actStep_2 := false;
+		  				END_IF
+		  				IF Step_2 THEN
+		  					;
+		  				END_IF
+		  				IF deactStep_2 THEN
+		  					deactStep_2 := false;
+		  				END_IF
+		  			END_IF
+		  			(****** Step_3 ******)
+		  			IF (actStep_3)OR(Step_3)OR(deactStep_3) THEN
+		  				IF actStep_3 THEN
+		  					actStep_3 := false;
+		  					AO_1  :=  (AO_1+1);
+		  				END_IF
+		  				IF Step_3 THEN
+		  					;
+		  				END_IF
+		  				IF deactStep_3 THEN
+		  					deactStep_3 := false;
+		  				END_IF
+		  			END_IF
+		  			(****** Step_5 ******)
+		  			IF (actStep_5)OR(Step_5)OR(deactStep_5) THEN
+		  				IF actStep_5 THEN
+		  					actStep_5 := false;
+		  				END_IF
+		  				IF Step_5 THEN
+		  					;
+		  					DO_2 := true;
+		  				END_IF
+		  				IF deactStep_5 THEN
+		  					deactStep_5 := false;
+		  					DO_2 := false;
+		  				END_IF
+		  			END_IF
+		  			(****** Step_4 ******)
+		  			IF (actStep_4)OR(Step_4)OR(deactStep_4) THEN
+		  				IF actStep_4 THEN
+		  					actStep_4 := false;
+		  				END_IF
+		  				IF Step_4 THEN
+		  					;
+		  					DO_1 := true;
+		  				END_IF
+		  				IF deactStep_4 THEN
+		  					deactStep_4 := false;
+		  					DO_1 := false;
+		  				END_IF
+		  			END_IF
+		  			END_WHILE;
+		  		END_IF
+		  		
+		  	  </xhtml>
+		  	</ST>
+		    </body>  	  <addData>
+		<data name="http://www.3s-software.com/plcopenxml/objectid" handleUnknown="discard">
+	  	  <ObjectId>bb10cf5f-d44b-48bf-ad52-f1059f71047f</ObjectId>
+		</data>
+  	  </addData>
+	  </pou>    </pous>
+  </types>
+  <instances>
+    <configurations />
+  </instances>
+	<addData>
+<data name="http://www.3s-software.com/plcopenxml/globalvars" handleUnknown="implementation">
+		  	<globalVars name="Global_GrafcetSteps">
+			  <variable name="actStep_1">
+			    <type>
+			  	  <BOOL />
+			    </type>
+			    <initialValue>
+			  	<simpleValue value="false" />
+			    </initialValue>
+			  </variable>
+			  
+			  <variable name="deactStep_1">
+			    <type>
+			  	  <BOOL />
+			    </type>
+			    <initialValue>
+			  	<simpleValue value="false" />
+			    </initialValue>
+			  </variable>
+			  
+			  <variable name="Step_1">
+			    <type>
+			  	  <BOOL />
+			    </type>
+			    <initialValue>
+			  	<simpleValue value="false" />
+			    </initialValue>
+			  </variable>
+			  
+			  <variable name="actStep_2">
+			    <type>
+			  	  <BOOL />
+			    </type>
+			    <initialValue>
+			  	<simpleValue value="false" />
+			    </initialValue>
+			  </variable>
+			  
+			  <variable name="deactStep_2">
+			    <type>
+			  	  <BOOL />
+			    </type>
+			    <initialValue>
+			  	<simpleValue value="false" />
+			    </initialValue>
+			  </variable>
+			  
+			  <variable name="Step_2">
+			    <type>
+			  	  <BOOL />
+			    </type>
+			    <initialValue>
+			  	<simpleValue value="false" />
+			    </initialValue>
+			  </variable>
+			  
+			  <variable name="actStep_3">
+			    <type>
+			  	  <BOOL />
+			    </type>
+			    <initialValue>
+			  	<simpleValue value="false" />
+			    </initialValue>
+			  </variable>
+			  
+			  <variable name="deactStep_3">
+			    <type>
+			  	  <BOOL />
+			    </type>
+			    <initialValue>
+			  	<simpleValue value="false" />
+			    </initialValue>
+			  </variable>
+			  
+			  <variable name="Step_3">
+			    <type>
+			  	  <BOOL />
+			    </type>
+			    <initialValue>
+			  	<simpleValue value="false" />
+			    </initialValue>
+			  </variable>
+			  
+			  <variable name="actStep_5">
+			    <type>
+			  	  <BOOL />
+			    </type>
+			    <initialValue>
+			  	<simpleValue value="false" />
+			    </initialValue>
+			  </variable>
+			  
+			  <variable name="deactStep_5">
+			    <type>
+			  	  <BOOL />
+			    </type>
+			    <initialValue>
+			  	<simpleValue value="false" />
+			    </initialValue>
+			  </variable>
+			  
+			  <variable name="Step_5">
+			    <type>
+			  	  <BOOL />
+			    </type>
+			    <initialValue>
+			  	<simpleValue value="false" />
+			    </initialValue>
+			  </variable>
+			  
+			  <variable name="actStep_4">
+			    <type>
+			  	  <BOOL />
+			    </type>
+			    <initialValue>
+			  	<simpleValue value="false" />
+			    </initialValue>
+			  </variable>
+			  
+			  <variable name="deactStep_4">
+			    <type>
+			  	  <BOOL />
+			    </type>
+			    <initialValue>
+			  	<simpleValue value="false" />
+			    </initialValue>
+			  </variable>
+			  
+			  <variable name="Step_4">
+			    <type>
+			  	  <BOOL />
+			    </type>
+			    <initialValue>
+			  	<simpleValue value="false" />
+			    </initialValue>
+			  </variable>
+			  
+              <addData>
+              	<data name="http://www.3s-software.com/plcopenxml/objectid" handleUnknown="discard">
+                  <ObjectId>1d145e5f-1b71-4724-a8b2-1526a73ee712</ObjectId>
+              	</data>
+              </addData>
+          	</globalVars>
+		  </data>
+
+		  <data name="http://www.3s-software.com/plcopenxml/globalvars" handleUnknown="implementation">
+		  	<globalVars name="Global_GrafcetParts">
+			  <variable name="Global_Grafcet">
+			    <type>
+			  	  <derived name="Grafcet_Control" />
+			    </type>
+			  </variable>
+			  
+              <addData>
+              	<data name="http://www.3s-software.com/plcopenxml/objectid" handleUnknown="discard">
+                  <ObjectId>1d145e5f-1b71-4724-a8b2-1526a73ee712</ObjectId>
+              	</data>
+              </addData>
+          	</globalVars>
+		  </data>
+      <data name="http://www.3s-software.com/plcopenxml/projectstructure" handleUnknown="discard">
+      	<ProjectStructure>
+
+
+          <Object Name="Global_GrafcetSteps" ObjectId="1d145e5f-1b71-4724-a8b2-1526a73ee712" />
+
+          <Object Name="Global_GrafcetParts" ObjectId="1d145e5f-1b71-4724-a8b2-1526a73ee712" />
+
+
+		  <Object Name="Grafcet_Control" ObjectId="bb10cf5f-d44b-48bf-ad52-f1059f71047f" />
+
+      	</ProjectStructure>
+      </data>
+  	</addData>
+</project>
